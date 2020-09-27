@@ -1,5 +1,8 @@
 package org.extvos.xql;
 
+import org.extvos.xql.exception.Exception;
+
+
 public class Transaction {
     private Session session;
 
