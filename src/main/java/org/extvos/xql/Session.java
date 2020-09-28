@@ -11,41 +11,41 @@ public class Session {
 
     public Transaction Begin() throws Exception {
         Transaction t = new Transaction(this);
-        t.Begin();
+        t.begin();
         return t;
     }
 
-    public QuerySet Table(Table table, Join... joints) throws Exception {
+    public QuerySet table(Table table, Join... joints) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Select(Table table, String... fields) throws Exception {
+    public QuerySet select(Table table, String... fields) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Update(Table table) throws Exception {
+    public QuerySet update(Table table) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Delete(Table table) throws Exception {
+    public QuerySet delete(Table table) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Insert(Table table, Object... objs) throws Exception {
+    public QuerySet insert(Table table, Object... objs) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Query(String fmt, Object... args) throws Exception {
+    public QuerySet query(String fmt, Object... args) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }
 
-    public QuerySet Exec(String fmt, Object... args) throws Exception {
+    public QuerySet exec(String fmt, Object... args) throws Exception {
         QuerySet qs = new QuerySet();
         return qs;
     }

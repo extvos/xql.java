@@ -20,14 +20,16 @@ public class Order {
         }
     }
 
-    public Order Asc() {
-        order = ASC;
-        return this;
+    public static Order Asc(Column c) {
+        return new Order(c,ASC);
+//        order = ASC;
+//        return this;
     }
 
-    public Order Desc() {
-        order = DESC;
-        return this;
+    public static Order Desc(Column c) {
+        return new Order(c,DESC);
+//        order = DESC;
+//        return this;
     }
 
 }

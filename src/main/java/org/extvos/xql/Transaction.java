@@ -10,15 +10,15 @@ public class Transaction {
         session = s;
     }
 
-    public void Begin() throws Exception {
+    public void begin() throws Exception {
 
     }
 
-    public void Commit() throws Exception {
+    public void commit() throws Exception {
 
     }
 
-    public void Close() throws Exception {
+    public void close() throws Exception {
 
     }
 }

@@ -7,9 +7,22 @@ public class Join {
 
     public Join(Table t) {
         table = t;
+        direction = 0;
     }
 
-    public Join On(String clause) {
+    public static Join Right(Table t) {
+        Join j = new Join(t);
+        j.direction = 1;
+        return j;
+    }
+
+    public static Join Left(Table t) {
+        Join j = new Join(t);
+        j.direction = -1;
+        return j;
+    }
+
+    public Join on(String clause) {
         onClause = clause;
         return this;
     }

@@ -48,11 +48,11 @@ public class Table {
         }
     }
 
-    public String CreateSQL() {
+    public String createSQL() {
         return "";
     }
 
-    public String DropSQL() {
+    public String dropSQL() {
         return "";
     }
 }

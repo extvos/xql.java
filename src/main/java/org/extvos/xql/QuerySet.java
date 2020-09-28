@@ -1,42 +1,62 @@
 package org.extvos.xql;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class QuerySet {
     protected Table table;
     protected List<Join> joints;
+    protected List<String> selectFields, groups, orders;
     protected String query;
     protected String action;
+    protected long offset, limit;
 
-    public QuerySet Where() throws Exception {
+    public QuerySet() {
+        offset = limit = 0;
+        query = action = "";
+    }
+
+    public QuerySet select(String... fields) throws Exception {
+        selectFields.addAll(Arrays.asList(fields));
         return this;
     }
 
-    public QuerySet Join(Table t) throws Exception {
+    public QuerySet where() throws Exception {
         return this;
     }
 
-    public QuerySet RightJoin(Table t) throws Exception {
+    public QuerySet join(Table t, String on) throws Exception {
+        joints.add(new Join(t).on(on));
         return this;
     }
 
-    public QuerySet LeftJoin(Table t) throws Exception {
+    public QuerySet rightJoin(Table t, String on) throws Exception {
+        joints.add(Join.Right(t).on(on));
         return this;
     }
 
-    public QuerySet GroupBy(Column... cls) throws Exception {
+    public QuerySet leftJoin(Table t, String on) throws Exception {
+        joints.add(Join.Left(t).on(on));
         return this;
     }
 
-    public QuerySet OrderBy() throws Exception {
+    public QuerySet groupBy(String... cls) throws Exception {
+        groups.addAll(Arrays.asList(cls));
         return this;
     }
 
-    public QuerySet Offset(long off) throws Exception {
+    public QuerySet orderBy(String... cls) throws Exception {
+        orders.addAll(Arrays.asList(cls));
         return this;
     }
 
-    public QuerySet Limit(long lmt) throws Exception {
+    public QuerySet offset(long off) throws Exception {
+        offset = off;
+        return this;
+    }
+
+    public QuerySet limit(long lmt) throws Exception {
+        limit = lmt;
         return this;
     }
 
