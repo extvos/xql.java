@@ -22,11 +22,11 @@ public class Table {
             throw new Exception("entity should be annotated by @Entity");
         }
         fields = entity.getDeclaredFields();
-        for (int i = 0; i < fields.length; i++) {
-            Column c = new Column(fields[i]);
+        for(Field field: fields){
+            Column c = new Column(field);
             columns.add(c);
             columnMap.put(c.name, c);
-            fieldMap.put(c.name, fields[i]);
+            fieldMap.put(c.name, field);
             if (c.primary) {
                 primaryKeys.add(c);
             }
