@@ -10,4 +10,6 @@ import java.lang.annotation.Target;
 public @interface Table {
     String name();
     String desc() default "";
+    String engine() default "";
+    String charset() default "UTF-8";
 }

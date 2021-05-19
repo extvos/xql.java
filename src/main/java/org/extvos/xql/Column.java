@@ -20,7 +20,7 @@ public class Column {
             org.extvos.xql.annotation.Column cc = f.getAnnotation(org.extvos.xql.annotation.Column.class);
             name = cc.name();
             check = cc.check();
-            desc = cc.desc();
+            desc = cc.comment();
             defVal = cc.defVal();
             unique = cc.unique();
             primary = cc.primary();

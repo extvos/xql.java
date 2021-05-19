@@ -4,9 +4,9 @@ import org.extvos.xql.annotation.Table;
 import org.extvos.xql.annotation.Column;
 import org.extvos.xql.annotation.ForeignKey;
 
-@Table(name = "persons")
+@Table(name = "persons", engine = "INNODB", charset = "gb2312", desc = "Person table")
 public class Person {
-    @Column(name = "id", primary = true)
+    @Column(name = "id", primary = true, autoIncrement = true)
     public int id;
     @Column(name = "firstname", nullable = false)
     public String firstName;
@@ -21,6 +21,6 @@ public class Person {
     }
 
     public String toString() {
-        return firstName + " " + lastName + "(" + id + ")";
+        return "(" + id + ") " + firstName + " " + lastName;
     }
 }
